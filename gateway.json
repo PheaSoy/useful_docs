@@ -1,0 +1,1878 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:9092",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/gateway/admin/apis/api-definition": {
+      "put": {
+        "tags": [
+          "api-def-controller"
+        ],
+        "operationId": "updateApiDef",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/APIDefReqDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseAPIDef"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.0/oauth/token": {
+      "post": {
+        "tags": [
+          "o-auth-controller"
+        ],
+        "operationId": "grantToken",
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "device_id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "location",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/oauth/token": {
+      "post": {
+        "tags": [
+          "o-auth-controller"
+        ],
+        "operationId": "grantToken_1",
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "device_id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "location",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.0/oauth/authorize": {
+      "post": {
+        "tags": [
+          "o-auth-controller"
+        ],
+        "operationId": "verifyAccess",
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "location",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAccessDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/oauth/authorize": {
+      "post": {
+        "tags": [
+          "o-auth-controller"
+        ],
+        "operationId": "verifyAccess_1",
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "app_version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "location",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAccessDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/roles": {
+      "post": {
+        "tags": [
+          "role-api-controller"
+        ],
+        "operationId": "createRole",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleCreateRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/roles/{code}/apis": {
+      "get": {
+        "tags": [
+          "role-api-controller"
+        ],
+        "operationId": "getApisByRoleCode",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseObject"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "role-api-controller"
+        ],
+        "operationId": "apiRole",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleAPIMappingRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/policies": {
+      "post": {
+        "tags": [
+          "policy-controller"
+        ],
+        "operationId": "addPolicy",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponsePolicyResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/policies/list": {
+      "post": {
+        "tags": [
+          "policy-controller"
+        ],
+        "operationId": "list",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseSearchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponsePolicyResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/clients": {
+      "post": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "registerClient",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseBaseClientDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/clients/{id}/service/{service}/api-publishes": {
+      "post": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "pushingClientApiByService",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "service",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRegisterAPIRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseBaseClientDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/clients/{id}/policies": {
+      "post": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "registerClientPolicy",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRegisterPolicyReqDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseBaseClientDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/clients/{id}/patch-scopes": {
+      "post": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "patchScopes",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseBaseClientDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/clients/{id}/client-apis": {
+      "post": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "updateClientAPIStatus",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "enum": [
+                    "ACTIVE",
+                    "INACTIVE",
+                    "DELETED"
+                  ]
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseBaseClientDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/clients/{id}/api-publishes": {
+      "get": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "getClientPublishApi",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseBaseClientDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "pushingClientApi",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRegisterAPIRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseBaseClientDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/clients/list": {
+      "post": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "getClientByName",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseSearchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseListClient"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/caches/evict": {
+      "post": {
+        "tags": [
+          "internal-cache-controller"
+        ],
+        "operationId": "cacheEvict",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CacheEvictRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/api-definition/list": {
+      "post": {
+        "tags": [
+          "api-def-controller"
+        ],
+        "operationId": "listApiDef",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseSearchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponsePageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/api-definition/create": {
+      "post": {
+        "tags": [
+          "api-def-controller"
+        ],
+        "operationId": "createApiDef",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/APIDefReqDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseListAPIDef"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/api-definition/create/batch": {
+      "post": {
+        "tags": [
+          "api-def-controller"
+        ],
+        "operationId": "createApiDefBatch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/APIDefReqDTO"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseListAPIDef"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.0/oauth/presession": {
+      "get": {
+        "tags": [
+          "pre-session-controller"
+        ],
+        "operationId": "get",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "pre-session-controller"
+        ],
+        "operationId": "preSession",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/clients/{id}/{status}": {
+      "patch": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "pathStatus",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string",
+                "enum": [
+                  "ACTIVE",
+                  "INACTIVE",
+                  "DELETED"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseBaseClientDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/admin/apis/clients/{id}": {
+      "get": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "getClientDetails",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseBaseClientDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "APIDefReqDTO": {
+        "required": [
+          "method",
+          "name",
+          "path",
+          "service",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "service": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "DELETED"
+            ]
+          }
+        }
+      },
+      "APIDef": {
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "DELETED"
+            ]
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "service": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "GET",
+              "HEAD",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE",
+              "OPTIONS",
+              "TRACE"
+            ]
+          },
+          "version": {
+            "type": "string"
+          },
+          "accessType": {
+            "type": "string"
+          }
+        }
+      },
+      "APIResponseAPIDef": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/APIDef"
+          },
+          "message_kh": {
+            "type": "string"
+          }
+        }
+      },
+      "AuthRequestDTO": {
+        "required": [
+          "grant_type"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          },
+          "x-api-key": {
+            "type": "string"
+          },
+          "so": {
+            "type": "string"
+          },
+          "device_id": {
+            "type": "string"
+          },
+          "app_version": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "grant_type": {
+            "type": "string"
+          },
+          "biometric_token": {
+            "type": "string"
+          },
+          "is_relogin": {
+            "type": "boolean"
+          },
+          "refresh_token": {
+            "type": "string"
+          },
+          "is_disable_biometric": {
+            "type": "boolean"
+          }
+        }
+      },
+      "APIResponseObject": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          },
+          "message_kh": {
+            "type": "string"
+          }
+        }
+      },
+      "RequestAccessDTO": {
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "service": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          },
+          "x-api-key": {
+            "type": "string"
+          },
+          "so": {
+            "type": "string"
+          },
+          "device_id": {
+            "type": "string"
+          },
+          "app_version": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        }
+      },
+      "RoleCreateRequestDTO": {
+        "required": [
+          "code",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        }
+      },
+      "RoleAPIMappingRequestDTO": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "apis_def": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PolicyRequestDTO": {
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "config": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "DELETED"
+            ]
+          }
+        }
+      },
+      "APIResponsePolicyResponseDTO": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PolicyResponseDTO"
+          },
+          "message_kh": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyResponseDTO": {
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "config": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "DELETED"
+            ]
+          }
+        }
+      },
+      "BaseSearchRequest": {
+        "type": "object",
+        "properties": {
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sort": {
+            "type": "string"
+          },
+          "params": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchRequest"
+            }
+          }
+        }
+      },
+      "SearchRequest": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "search_operation": {
+            "type": "string",
+            "enum": [
+              "GREATER_THAN",
+              "LESS_THAN",
+              "GREATER_THAN_EQUAL",
+              "LESS_THAN_EQUAL",
+              "NOT_EQUAL",
+              "EQUAL",
+              "MATCH",
+              "MATCH_END",
+              "BETWEEN",
+              "BETWEEN_DATE"
+            ]
+          }
+        }
+      },
+      "ClientRequestDTO": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "scopes": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "DELETED"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "roles": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          },
+          "access_token_expired": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "refresh_token_expired": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "auto_generate": {
+            "type": "boolean"
+          },
+          "grant_type": {
+            "type": "string"
+          },
+          "channel_type": {
+            "type": "string"
+          },
+          "app_type": {
+            "type": "string",
+            "enum": [
+              "INTERNAL_GATEWAY",
+              "API_GATEWAY",
+              "MOBILE_GATEWAY",
+              "PARTNER_GATEWAY"
+            ]
+          }
+        }
+      },
+      "APIResponseBaseClientDTO": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/BaseClientDTO"
+          },
+          "message_kh": {
+            "type": "string"
+          }
+        }
+      },
+      "BaseClientDTO": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "scopes": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "DELETED"
+            ]
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          },
+          "access_token_expired": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "refresh_token_expired": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "auto_generate": {
+            "type": "boolean"
+          },
+          "grant_type": {
+            "type": "string"
+          }
+        }
+      },
+      "ClientRegisterAPIDetails": {
+        "type": "object",
+        "properties": {
+          "retiredOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "DELETED"
+            ]
+          },
+          "code": {
+            "type": "string"
+          },
+          "is_published": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          },
+          "access_type": {
+            "type": "string"
+          }
+        }
+      },
+      "ClientRegisterAPIRequestDTO": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "scopes": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "DELETED"
+            ]
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          },
+          "access_token_expired": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "refresh_token_expired": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "auto_generate": {
+            "type": "boolean"
+          },
+          "grant_type": {
+            "type": "string"
+          },
+          "register_apis": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientRegisterAPIDetails"
+            }
+          }
+        }
+      },
+      "ClientRegisterPolicyDetail": {
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "config": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "DELETED"
+            ]
+          }
+        }
+      },
+      "ClientRegisterPolicyReqDTO": {
+        "type": "object",
+        "properties": {
+          "policies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientRegisterPolicyDetail"
+            }
+          },
+          "client_id": {
+            "type": "string"
+          }
+        }
+      },
+      "APIResponseListClient": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Client"
+            }
+          },
+          "message_kh": {
+            "type": "string"
+          }
+        }
+      },
+      "Client": {
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "DELETED"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "secret": {
+            "type": "string"
+          },
+          "roles": {
+            "type": "string"
+          },
+          "accessTokenExpired": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "refreshTokenExpired": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "channelType": {
+            "type": "string"
+          },
+          "grantType": {
+            "type": "string"
+          },
+          "scopes": {
+            "type": "string"
+          },
+          "isEnabledHash": {
+            "type": "boolean"
+          },
+          "appType": {
+            "type": "string",
+            "enum": [
+              "INTERNAL_GATEWAY",
+              "API_GATEWAY",
+              "MOBILE_GATEWAY",
+              "PARTNER_GATEWAY"
+            ]
+          },
+          "channelTypes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "IB_WEB",
+                "IB_MOBILE",
+                "CUSTOMER_MOBILE",
+                "MOBILE_API",
+                "CUSTOMER_WEB",
+                "STM",
+                "ATM",
+                "CDM",
+                "INVALID_CHANNEL",
+                "INTERNAL_DEVELOPER",
+                "PAYMENT_GATEWAY",
+                "MERCHANT_WEB",
+                "MERCHANT_GATEWAY",
+                "MERCHANT_POS"
+              ]
+            }
+          },
+          "grantTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CacheEvictRequestDTO": {
+        "type": "object",
+        "properties": {
+          "evictType": {
+            "type": "string",
+            "enum": [
+              "ALL",
+              "NAME",
+              "NAME_KEY"
+            ]
+          },
+          "cacheName": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          }
+        }
+      },
+      "APIResponsePageResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PageResponse"
+          },
+          "message_kh": {
+            "type": "string"
+          }
+        }
+      },
+      "PageData": {
+        "type": "object",
+        "properties": {
+          "page_number": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "page_size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "total_elements": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "total_pages": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "PageResponse": {
+        "type": "object",
+        "properties": {
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "page": {
+            "$ref": "#/components/schemas/PageData"
+          }
+        }
+      },
+      "APIResponseListAPIDef": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/APIDef"
+            }
+          },
+          "message_kh": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
